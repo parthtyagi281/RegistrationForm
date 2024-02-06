@@ -1,0 +1,101 @@
+﻿@page
+@model RegistrationForm.Pages.Users.CreateModel
+@{
+}
+
+<br>
+<h2>New User</h2>
+@if (Model.errorMessage.Length > 0){
+    <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+        <strong>@Model.errorMessage</strong>
+        <button type='button' class='btn-close' data-bs-dismiss ='alert' aria-label='Close'></button>
+    </div>
+}
+
+<form method="post">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">First Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="FirstName" value="@Model.userInfo.FirstName">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Last Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="LastName" value="@Model.userInfo.LastName">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Email</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="Email" value="@Model.userInfo.Email">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">PasswordHash</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="PasswordHash" value="@Model.userInfo.PasswordHash">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Date Of Birth</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="DateOfBirth" value="@Model.userInfo.DateOfBirth">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Gender</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="Gender" value="@Model.userInfo.Gender">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Street Address</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="StreetAddress" value="@Model.userInfo.StreetAddress">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">City</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="City" value="@Model.userInfo.City">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">State</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="State" value="@Model.userInfo.State">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">ZipCode</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="ZipCode" value="@Model.userInfo.ZipCode">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Phone Number</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="PhoneNumber" value="@Model.userInfo.PhoneNumber">
+        </div>
+    </div>
+
+    @if (Model.successMessage.Length > 0){
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class='alert alert-success alert-dismissible fade show' role='alert'>
+                    <strong>@Model.successMessage</strong>
+                    <button type='button' class='btn-close' data-bs-dismiss ='alert' aria-label='Close'></button>
+                </div>
+            </div>
+        </div>
+    }
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+        </div>
+    </div>
+</form>

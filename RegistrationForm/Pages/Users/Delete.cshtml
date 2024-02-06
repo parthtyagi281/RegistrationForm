@@ -1,0 +1,29 @@
+﻿@page
+@using System.Data.SqlClient;
+@{
+    try
+    {
+        String UserId = Request.Query["UserId"];
+        String connectionString = "Data Source=RAJA_BON\\MSSQLSERVER1;UID=parth;Initial Catalog=RegistrationFormDb;pwd=parth1;Connection Timeout=36000;encrypt=true;trustServerCertificate=true";
+        using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+        {
+            sqlConnection.Open();
+            String sql = "DELETE FROM Users WHERE UserId=@UserId";
+            using (SqlCommand command = new SqlCommand(sql, sqlConnection))
+            {
+                command.Parameters.AddWithValue("@UserId", UserId);
+                command.ExecuteNonQuery();
+
+
+            }
+        }
+
+    }
+    catch (Exception ex)
+    {
+    }
+
+    Response.Redirect("/Users/Index");
+}
+
+

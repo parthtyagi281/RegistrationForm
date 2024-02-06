@@ -1,0 +1,53 @@
+﻿@page
+@model RegistrationForm.Pages.Users.IndexModel
+@{
+}
+
+<br>
+<h2>List of Users</h2>
+<a class="btn btn-primary btn-sm" href= '/Users/Create'>New User</a>
+<table class ="table">
+    <thead>
+        <tr>
+            <th>UserId</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Email</th>
+            <th>PasswordHash</th>
+            <th>DateOfBirth</th>
+            <th>Gender</th>
+            <th>StreetAddress</th>
+            <th>City</th>
+            <th>State</th>
+            <th>ZipCode</th>
+            <th>PhoneNumber</th>
+            <th>RegistrationDate</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listsUsers)
+        {
+            <tr>
+                <td>@item.UserId</td>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.Email</td>
+                <td>@item.PasswordHash</td>
+                <td>@item.DateOfBirth</td>
+                <td>@item.Gender</td>
+                <td>@item.StreetAddress</td>
+                <td>@item.City</td>
+                <td>@item.State</td>
+                <td>@item.ZipCode</td>
+                <td>@item.PhoneNumber</td>
+                <td>@item.RegistrationDate</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Users/Edit?UserId=@item.UserId">Edit</a>
+                    <a class="btn btn-primary btn-sm" href="/Users/Delete?UserId=@item.UserId">Delete</a>
+                </td>
+            </tr>
+            
+        }
+    </tbody>
+</table>
